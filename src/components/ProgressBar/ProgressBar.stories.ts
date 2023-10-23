@@ -16,6 +16,7 @@ const meta = {
     color: {
       options: ['white', 'black', 'blue'],
       control: {type: 'radio'},
+      defaultValue: 'white',
     },
     size: {
       options: ['small', 'medium', 'large'],

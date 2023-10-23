@@ -15,7 +15,7 @@ interface ProgressBarProps {
 }
 
 export function ProgressBar({
-  color,
+  color = 'white',
   title,
   spent,
   spentValue,
@@ -24,7 +24,7 @@ export function ProgressBar({
   percentage,
   size,
 }: ProgressBarProps) {
-  return color ? (
+  return title ? (
     <div className={`${styles.container} ${styles[`container-${color}`]}`}>
       <div className={styles['container-base']}>
         <p className={`${styles.title} ${styles[`title-${color}`]}`}>{title}</p>

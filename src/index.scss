@@ -1,3 +1,12 @@
+@font-face {
+  font-family: 'GitLab';
+  src: url('src/assets/GitLabSans.ttf');
+}
+
+* {
+  font-family: 'GitLab', sans-serif;
+}
+
 p {
   margin: 0;
 }

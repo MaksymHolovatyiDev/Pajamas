@@ -1,7 +1,7 @@
-import {useState} from 'react';
 import {ReactSVG} from 'react-svg';
 
 import styles from './styled.module.scss';
+import { useSortBodyData } from './hooks';
 
 interface TableProps {
   head?: string[];
@@ -9,28 +9,9 @@ interface TableProps {
   zebra?: boolean;
 }
 
-export function Table({head, body, zebra}: TableProps) {
-  const [sortIndex, setSortIndex] = useState<
-    [null | number, null | 'up' | 'down']
-  >([null, null]);
-  const [sortArray, setSortArray] = useState(body ? [...body] : body);
+export function Table({ head, body, zebra }: TableProps) {
+  const {sortArray, sortIndex, onSortClick} = useSortBodyData(body);
 
-  const onSortClick = (idx: number) => {
-    if (sortIndex[0] !== idx) {
-      setSortIndex([idx, 'up']);
-
-      const array = sortArray?.sort((a, b) => a[idx].localeCompare(b[idx]));
-      setSortArray(array);
-    } else if (sortIndex[1] === 'up') {
-      setSortIndex([idx, 'down']);
-
-      const array = sortArray?.sort((a, b) => b[idx].localeCompare(a[idx]));
-      setSortArray(array);
-    } else {
-      setSortIndex([null, null]);
-      setSortArray(body);
-    }
-  };
 
   return (
     <table className={styles.table}>
