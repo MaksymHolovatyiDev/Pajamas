@@ -22,9 +22,6 @@ const meta = {
       type: 'string',
       defaultValue: 'Title',
     },
-    buttons: {
-      type: 'boolean',
-    },
     cross: {
       type: 'boolean',
     },
@@ -38,6 +35,8 @@ type Story = StoryObj<typeof meta>;
 export const Type: Story = {
   args: {
     type: 'error',
+    text: 'The body content lets the user know why, and how to remedy or proceed.',
+    buttons: ['Action to take', 'Alternate action'],
   },
 };
 
@@ -45,13 +44,15 @@ export const Title: Story = {
   args: {
     type: 'error',
     title: 'Title',
+    text: 'The body content lets the user know why, and how to remedy or proceed.',
+    buttons: ['Action to take', 'Alternate action'],
   },
 };
 
 export const Label: Story = {
   args: {
     type: 'error',
-    buttons: true,
+    text: 'The body content lets the user know why, and how to remedy or proceed.',
   },
 };
 
@@ -59,5 +60,7 @@ export const Cross: Story = {
   args: {
     type: 'error',
     cross: true,
+    text: 'The body content lets the user know why, and how to remedy or proceed.',
+    buttons: ['Action to take', 'Alternate action'],
   },
 };

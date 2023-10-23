@@ -15,7 +15,7 @@ const meta = {
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
     status: {
-      options: ['Critical', 'High', 'Medium', 'Low', 'Info', 'Unknown'],
+      options: ['critical', 'high', 'medium', 'low', 'info', 'unknown'],
       control: {type: 'radio'},
     },
   },
@@ -27,6 +27,6 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const StatusValue: Story = {
   args: {
-    status: 'Critical',
+    status: 'critical',
   },
 };

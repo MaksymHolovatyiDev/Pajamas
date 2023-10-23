@@ -14,8 +14,8 @@ const meta = {
   tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-    text: {
-      options: ['Primary', 'Secondary', 'Tertiary'],
+    variant: {
+      options: ['primary', 'secondary', 'tertiary'],
       control: {type: 'radio'},
     },
     scale: {
@@ -35,18 +35,21 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Primary: Story = {
   args: {
-    text: 'Primary',
+    variant: 'primary',
+    text: 'Pajamas',
   },
 };
 
 export const Scale: Story = {
   args: {
     scale: 100,
+    text: 'Pajamas',
   },
 };
 
 export const Label: Story = {
   args: {
     label: 'bold',
+    text: 'Pajamas',
   },
 };

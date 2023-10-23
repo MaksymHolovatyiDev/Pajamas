@@ -6,15 +6,15 @@
   color: $color;
 }
 
-.Primary {
+.primary {
   @include text(#333238, 900);
 }
 
-.Secondary {
+.secondary {
   @include text(#737278, 500);
 }
 
-.Tertiary {
+.tertiary {
   @include text(#89888d, 400);
 }
 

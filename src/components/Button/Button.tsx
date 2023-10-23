@@ -5,24 +5,24 @@ import Loading from './assets/Loading.svg';
 
 interface ButtonProps {
   type?:
-    | 'Primary'
-    | 'Danger'
-    | 'Loading'
-    | 'Disabled'
-    | 'Selected'
-    | 'Dashed'
-    | 'Link';
+    | 'primary'
+    | 'danger'
+    | 'loading'
+    | 'disabled'
+    | 'selected'
+    | 'dashed'
+    | 'link';
 }
 
 export function Button({type}: ButtonProps) {
-  return type === 'Link' ? (
+  return type === 'link' ? (
     <a className={styles.Link}>{type}</a>
   ) : (
     <button
       type="button"
-      disabled={type === 'Loading' || type === 'Disabled'}
+      disabled={type === 'loading' || type === 'disabled'}
       className={`${styles.button} ${styles[`button-${type}`]}`}>
-      {type === 'Loading' && (
+      {type === 'loading' && (
         <ReactSVG src={Loading} className={styles['Loading-svg']} />
       )}
       {type || 'Default'}

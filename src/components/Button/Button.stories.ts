@@ -1,6 +1,6 @@
 import type {Meta, StoryObj} from '@storybook/react';
 
-import {Button} from './Button.index';
+import {Button} from './Button';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
@@ -15,13 +15,13 @@ const meta = {
   argTypes: {
     type: {
       options: [
-        'Primary',
-        'Danger',
-        'Loading',
-        'Disabled',
-        'Selected',
-        'Dashed',
-        'Link',
+        'primary',
+        'danger',
+        'loading',
+        'disabled',
+        'selected',
+        'dashed',
+        'link',
       ],
       control: {type: 'radio'},
     },
@@ -39,6 +39,6 @@ export const Default: Story = {
 
 export const Danger: Story = {
   args: {
-    type: 'Danger',
+    type: 'danger',
   },
 };

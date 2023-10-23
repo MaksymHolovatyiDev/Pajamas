@@ -21,6 +21,10 @@ const meta = {
       options: ['small', 'medium', 'large'],
       control: {type: 'radio'},
     },
+    title: {
+      type: 'string',
+      defaultValue: 'Time tracking',
+    },
   },
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
 } satisfies Meta<typeof ProgressBar>;
@@ -31,4 +35,16 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Bar: Story = {
   args: {percentage: 20},
+};
+
+export const BarWidget: Story = {
+  args: {
+    percentage: 20,
+    color: 'white',
+    title: 'Time tracking',
+    spent: 'Spent',
+    spentValue: '1d',
+    est: 'Est',
+    estValue: '1w',
+  },
 };

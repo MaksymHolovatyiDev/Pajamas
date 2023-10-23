@@ -7,6 +7,22 @@
 .head {
   border-top: 1px solid #dbdbdb;
   border-bottom: 1px solid #dbdbdb;
+
+  & th {
+    cursor: pointer;
+    &:hover {
+      background-color: #ececef;
+    }
+  }
+}
+
+.header-text {
+  display: flex;
+  align-items: center;
+
+  & > div > div {
+    height: 16px;
+  }
 }
 
 .body {
@@ -29,6 +45,10 @@
 
 .head-zebra {
   background-color: #ececef;
+
+  & th:hover {
+    background-color: #fff;
+  }
 }
 
 .body-zebra {
