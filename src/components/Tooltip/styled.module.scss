@@ -1,0 +1,69 @@
+.root {
+  box-sizing: border-box;
+
+  max-width: 200px;
+
+  position: relative;
+
+  background-color: #000;
+
+  border-radius: 4px;
+  padding: 8px 12px;
+}
+
+.text {
+  color: #fff;
+
+  font-size: 12px;
+  line-height: 1.333;
+
+  text-align: center;
+}
+
+.triangle {
+  position: absolute;
+  border-bottom: 4px solid transparent;
+  border-top: 4px solid transparent;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+
+  &-top {
+    left: 50%;
+    top: 0;
+
+    transform: translate(-50%, -100%);
+
+    border-bottom: 4px solid black;
+    border-top: none;
+  }
+
+  &-bottom {
+    left: 50%;
+    bottom: 0;
+
+    transform: translate(-50%, 100%);
+
+    border-bottom: none;
+    border-top: 4px solid black;
+  }
+
+  &-right {
+    right: 0;
+    top: 50%;
+
+    transform: translate(100%, -50%);
+
+    border-right: none;
+    border-left: 4px solid black;
+  }
+
+  &-left {
+    left: 0;
+    top: 50%;
+
+    transform: translate(-100%, -50%);
+
+    border-left: none;
+    border-right: 4px solid black;
+  }
+}

@@ -1,0 +1,42 @@
+.table {
+  width: 600px;
+
+  border-collapse: collapse;
+}
+
+.head {
+  border-top: 1px solid #dbdbdb;
+  border-bottom: 1px solid #dbdbdb;
+}
+
+.body {
+  & tr {
+    border-bottom: 1px solid #dbdbdb;
+
+    &:hover {
+      background-color: #fbfafd;
+
+      cursor: pointer;
+    }
+  }
+}
+
+.container > * {
+  text-align: left;
+
+  padding: 16px;
+}
+
+.head-zebra {
+  background-color: #ececef;
+}
+
+.body-zebra {
+  & > tr:nth-child(2n) {
+    background-color: #fbfafd;
+
+    &:hover {
+      background-color: white;
+    }
+  }
+}

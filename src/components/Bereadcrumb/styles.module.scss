@@ -1,0 +1,38 @@
+.root {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  &::after {
+    content: '/';
+    margin-left: 8px;
+  }
+  &:last-child {
+    font-weight: bold;
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.link {
+  display: flex;
+  gap: 4px;
+
+  max-width: 128px;
+
+  &:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+.text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-wrap: nowrap;
+}

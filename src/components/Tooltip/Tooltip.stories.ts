@@ -1,50 +1,49 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type {Meta, StoryObj} from '@storybook/react';
 
-import { Button } from './Button';
+import {Tooltip} from './Tooltip';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
-  title: 'Example/Button',
-  component: Button,
+  title: 'Components/Tooltip',
+  component: Tooltip,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
     layout: 'centered',
   },
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
   tags: ['autodocs'],
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
+
   argTypes: {
-    backgroundColor: { control: 'color' },
+    direction: {
+      options: ['bottom', 'top', 'left', 'right'],
+      control: {type: 'radio'},
+    },
   },
-} satisfies Meta<typeof Button>;
+
+  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
+} satisfies Meta<typeof Tooltip>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const Primary: Story = {
+export const BaseTooltip: Story = {
   args: {
-    primary: true,
-    label: 'Button',
+    text: 'Content',
+    direction: 'bottom',
   },
 };
 
-export const Secondary: Story = {
+export const TooltipResize: Story = {
   args: {
-    label: 'Button',
+    text: 'I’ve got a tip for you!',
+    direction: 'bottom',
   },
 };
 
-export const Large: Story = {
+export const TooltipWrap: Story = {
   args: {
-    size: 'large',
-    label: 'Button',
-  },
-};
-
-export const Small: Story = {
-  args: {
-    size: 'small',
-    label: 'Button',
+    text: 'Text wraps when reaching 200px max-width',
+    direction: 'bottom',
   },
 };

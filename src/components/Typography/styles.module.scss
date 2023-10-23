@@ -1,0 +1,32 @@
+@mixin text($color, $weight) {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: $weight;
+  line-height: 20px;
+  color: $color;
+}
+
+.Primary {
+  @include text(#333238, 900);
+}
+
+.Secondary {
+  @include text(#737278, 500);
+}
+
+.Tertiary {
+  @include text(#89888d, 400);
+}
+
+.text {
+  &-bold {
+    font-weight: bold;
+  }
+  &-underline {
+    text-decoration: underline;
+  }
+  &-bold-underline {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+}

@@ -1,0 +1,62 @@
+@mixin container($gap) {
+  display: flex;
+  align-items: flex-start;
+
+  gap: $gap;
+}
+
+@mixin button($color, $bg, $border) {
+  color: $color;
+  background-color: $bg;
+  padding: 8px 12px;
+  border: 1px solid $border;
+  border-radius: 4px;
+}
+
+.root {
+  @include container(16px);
+
+  padding: 16px;
+
+  &-error {
+    background-color: #fcf1ef;
+  }
+  &-warning {
+    background-color: #fdf1dd;
+  }
+  &-success {
+    background-color: #ecf4ee;
+  }
+  &-info {
+    background-color: #e9f3fc;
+  }
+  &-notification {
+    background-color: #ececef;
+  }
+}
+
+.title {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+  letter-spacing: -0.2px;
+}
+
+.container {
+  @include container(8px);
+  flex-direction: column;
+}
+
+.buttons-container {
+  @include container(8px);
+}
+
+.button {
+  &-action {
+    @include button(#ffffff, #1f75cb, #1f75cb);
+  }
+  &-alternate {
+    @include button(#303030, #ffffff, #bfbfc3);
+  }
+}
