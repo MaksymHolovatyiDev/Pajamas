@@ -4,20 +4,17 @@ on:
   push:
     branches: [master]
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v2.3.1
-
-      - name: Install, lint, build 🔧
-        run: |
-          npm install
-          npm run lint
-          npm run build-storybook
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@4.1.0
+      - id: build-publish
+        uses: bitovi/github-actions-storybook-to-github-pages@v1.0.0
         with:
-          branch: gh-pages
-          folder: storybook-static
+          path: storybook-static
+          build_command: npm run build-storybook
