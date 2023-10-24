@@ -1,3 +1,5 @@
+import React from 'react';
+
 import {ReactSVG} from 'react-svg';
 
 import styles from './styled.module.scss';
@@ -14,7 +16,7 @@ interface ProgressBarProps {
   estValue?: string;
 }
 
-export function ProgressBar({
+export const ProgressBar: React.FC<ProgressBarProps> = ({
   color = 'white',
   title,
   spent,
@@ -23,7 +25,7 @@ export function ProgressBar({
   estValue,
   percentage,
   size,
-}: ProgressBarProps) {
+}: ProgressBarProps) => {
   return title ? (
     <div className={`${styles.container} ${styles[`container-${color}`]}`}>
       <div className={styles['container-base']}>
@@ -54,4 +56,4 @@ export function ProgressBar({
       />
     </div>
   );
-}
+};

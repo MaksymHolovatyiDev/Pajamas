@@ -1,3 +1,5 @@
+import React from 'react';
+
 import {ReactSVG} from 'react-svg';
 
 import error from './assets/error.svg';
@@ -26,7 +28,13 @@ interface AlertProps {
   cross?: boolean;
 }
 
-export function Alert({type, title, text, buttons, cross}: AlertProps) {
+export const Alert: React.FC<AlertProps> = ({
+  type,
+  title,
+  text,
+  buttons,
+  cross,
+}: AlertProps) => {
   return (
     <div className={`${styles.root} ${styles[`root-${type}`]}`}>
       <ReactSVG src={svgMapping[type]} />
@@ -47,4 +55,4 @@ export function Alert({type, title, text, buttons, cross}: AlertProps) {
       {!cross && <ReactSVG src={Cross} />}
     </div>
   );
-}
+};

@@ -1,8 +1,8 @@
-## Description
+# Description
 
 This project allows you to create elements as well as their additional properties and styles which can be conveniently viewed using the storybook.
 
-## To run project
+# To run project
 
 ```bash
 npm i
@@ -12,11 +12,11 @@ yarn install
 yarn storybook
 ```
 
-## Figma
+# Figma
 
 [Link](<https://www.figma.com/file/myGz1Yg0wvppvxm6PsU8T7/%F0%9F%93%99-Component-library-(Community)?node-id=3050%3A0&mode=dev>) to figma.
 
-## Deployed application
+# Deployed application
 
 [Link](https://maksymholovatyidev.github.io/ui-kit/?path=/docs/configure-your-project--docs) to deployed application.
 

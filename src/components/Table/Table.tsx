@@ -1,3 +1,5 @@
+import React from 'react';
+
 import {ReactSVG} from 'react-svg';
 
 import up from './assets/arrow-up.svg';
@@ -17,7 +19,11 @@ interface TableProps {
   zebra?: boolean;
 }
 
-export function Table({head, body, zebra}: TableProps) {
+export const Table: React.FC<TableProps> = ({
+  head,
+  body,
+  zebra,
+}: TableProps) => {
   const {sortArray, sortIndex, onSortClick} = useSortBodyData(body);
 
   return (
@@ -52,4 +58,4 @@ export function Table({head, body, zebra}: TableProps) {
       </tbody>
     </table>
   );
-}
+};

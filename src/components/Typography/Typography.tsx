@@ -1,3 +1,5 @@
+import React from 'react';
+
 import styles from './styles.module.scss';
 
 interface TypographyProps {
@@ -10,7 +12,12 @@ interface TypographyProps {
   text: string;
 }
 
-export function Typography({variant, scale, label, text}: TypographyProps) {
+export const Typography: React.FC<TypographyProps> = ({
+  variant,
+  scale,
+  label,
+  text,
+}: TypographyProps) => {
   return (
     <p
       className={`${variant && styles[variant]} ${
@@ -20,4 +27,4 @@ export function Typography({variant, scale, label, text}: TypographyProps) {
       {text}
     </p>
   );
-}
+};

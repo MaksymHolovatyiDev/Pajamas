@@ -1,3 +1,5 @@
+import React from 'react';
+
 import {ReactSVG} from 'react-svg';
 import BaseAvatar from './assets/Base Avatar.svg';
 
@@ -7,7 +9,9 @@ interface BreadcrumbProps {
   items: {text: string; image: boolean}[];
 }
 
-export function Breadcrumb({items}: BreadcrumbProps) {
+export const Breadcrumb: React.FC<BreadcrumbProps> = ({
+  items,
+}: BreadcrumbProps) => {
   return (
     <ul className={styles.root}>
       {items.map((el, idx) => (
@@ -20,4 +24,4 @@ export function Breadcrumb({items}: BreadcrumbProps) {
       ))}
     </ul>
   );
-}
+};

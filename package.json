@@ -1,7 +1,6 @@
 {
-  "name": "Ui-kit",
-  "private": true,
-  "version": "0.0.0",
+  "name": "@maksymholovatyidev/ui-kit",
+  "version": "0.0.9",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -16,6 +15,8 @@
     "jackspeak": "2.1.1"
   },
   "dependencies": {
+    "@types/react": "^18.2.31",
+    "@types/react-dom": "^18.2.14",
     "array-union": "^1.0.2",
     "array-uniq": "^1.0.3",
     "commander": "^11.1.0",
@@ -31,6 +32,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-svg": "^16.1.29",
+    "sass": "^1.69.4",
     "strip-outer": "^1.0.1",
     "trim-repeated": "^1.0.0"
   },
@@ -44,8 +46,6 @@
     "@storybook/react": "7.5.0",
     "@storybook/react-vite": "7.5.0",
     "@storybook/testing-library": "0.2.2",
-    "@types/react": "^18.2.15",
-    "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "@vitejs/plugin-react-swc": "^3.3.2",
@@ -55,7 +55,6 @@
     "eslint-plugin-react-refresh": "^0.4.3",
     "eslint-plugin-storybook": "^0.6.15",
     "gh-pages": "^6.0.0",
-    "sass": "^1.69.4",
     "sass-loader": "^13.3.2",
     "storybook": "7.5.0",
     "style-loader": "^3.3.3",

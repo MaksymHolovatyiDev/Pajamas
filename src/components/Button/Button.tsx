@@ -1,3 +1,5 @@
+import React from 'react';
+
 import {ReactSVG} from 'react-svg';
 
 import styles from './styled.module.scss';
@@ -15,7 +17,7 @@ interface ButtonProps {
   onClick: (data?: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
-export function Button({type, onClick}: ButtonProps) {
+export const Button: React.FC<ButtonProps> = ({type, onClick}: ButtonProps) => {
   return type === 'link' ? (
     <a className={styles.Link}>{type}</a>
   ) : (
@@ -30,4 +32,4 @@ export function Button({type, onClick}: ButtonProps) {
       {type || 'Default'}
     </button>
   );
-}
+};

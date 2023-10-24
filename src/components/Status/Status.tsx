@@ -1,3 +1,5 @@
+import React from 'react';
+
 import {ReactSVG} from 'react-svg';
 
 import critical from './assets/critical.svg';
@@ -22,11 +24,11 @@ interface StatusProps {
   status: 'critical' | 'high' | 'medium' | 'low' | 'info' | 'unknown';
 }
 
-export function Status({status}: StatusProps) {
+export const Status: React.FC<StatusProps> = ({status}: StatusProps) => {
   return (
     <div className={styles.root}>
       <ReactSVG src={svgMapping[status]} />
       <p>{status}</p>
     </div>
   );
-}
+};

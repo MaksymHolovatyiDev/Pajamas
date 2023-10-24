@@ -1,3 +1,5 @@
+import React from 'react';
+
 import styles from './styled.module.scss';
 
 interface TooltipProps {
@@ -5,7 +7,10 @@ interface TooltipProps {
   text: string;
 }
 
-export function Tooltip({direction, text}: TooltipProps) {
+export const Tooltip: React.FC<TooltipProps> = ({
+  direction,
+  text,
+}: TooltipProps) => {
   return (
     <div className={styles.root}>
       <p className={styles.text}>{text}</p>
@@ -14,4 +19,4 @@ export function Tooltip({direction, text}: TooltipProps) {
       />
     </div>
   );
-}
+};
