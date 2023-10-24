@@ -1,7 +1,22 @@
 import {ReactSVG} from 'react-svg';
+
+import error from './assets/error.svg';
+import warning from './assets/warning.svg';
+import success from './assets/success.svg';
+import info from './assets/info.svg';
+import notification from './assets/notification.svg';
+
 import Cross from './assets/cross.svg';
 
 import styles from './styles.module.scss';
+
+const svgMapping = {
+  error,
+  warning,
+  success,
+  info,
+  notification,
+};
 
 interface AlertProps {
   type: 'error' | 'warning' | 'success' | 'info' | 'notification';
@@ -14,7 +29,7 @@ interface AlertProps {
 export function Alert({type, title, text, buttons, cross}: AlertProps) {
   return (
     <div className={`${styles.root} ${styles[`root-${type}`]}`}>
-      <ReactSVG src={`src/components/Alert/assets/${type}.svg`} />
+      <ReactSVG src={svgMapping[type]} />
 
       <div className={styles.container}>
         {title && <p className={styles.title}>{title}</p>}

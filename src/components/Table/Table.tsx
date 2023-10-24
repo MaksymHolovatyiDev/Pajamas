@@ -1,7 +1,15 @@
 import {ReactSVG} from 'react-svg';
 
+import up from './assets/arrow-up.svg';
+import down from './assets/arrow-down.svg';
+
 import styles from './styled.module.scss';
-import { useSortBodyData } from './hooks';
+import {useSortBodyData} from './hooks';
+
+const svgMapping = {
+  up,
+  down,
+};
 
 interface TableProps {
   head?: string[];
@@ -9,9 +17,8 @@ interface TableProps {
   zebra?: boolean;
 }
 
-export function Table({ head, body, zebra }: TableProps) {
+export function Table({head, body, zebra}: TableProps) {
   const {sortArray, sortIndex, onSortClick} = useSortBodyData(body);
-
 
   return (
     <table className={styles.table}>
@@ -24,10 +31,8 @@ export function Table({ head, body, zebra }: TableProps) {
             <th key={el + idx} onClick={() => onSortClick(idx)}>
               <div className={styles['header-text']}>
                 <p>{el}</p>
-                {idx === sortIndex[0] && (
-                  <ReactSVG
-                    src={`src/components/Table/assets/arrow-${sortIndex[1]}.svg`}
-                  />
+                {idx === sortIndex[0] && sortIndex[1] && (
+                  <ReactSVG src={svgMapping[sortIndex[1]]} />
                 )}
               </div>
             </th>
