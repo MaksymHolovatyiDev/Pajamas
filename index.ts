@@ -6,3 +6,4 @@ export * from './src/components/Status/Status';
 export * from './src/components/Table/Tabel.stories';
 export * from './src/components/Tooltip/Tooltip';
 export * from './src/components/Typography/Typography';
+export * from './src/components/Modal/Modal';

@@ -15,9 +15,10 @@ interface ButtonProps {
     | 'dashed'
     | 'link';
   onClick: (data?: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  text?: string;
 }
 
-export const Button: React.FC<ButtonProps> = ({type, onClick}: ButtonProps) => {
+export const Button: React.FC<ButtonProps> = ({type, onClick, text}: ButtonProps) => {
   return type === 'link' ? (
     <a className={styles.Link}>{type}</a>
   ) : (
@@ -29,7 +30,7 @@ export const Button: React.FC<ButtonProps> = ({type, onClick}: ButtonProps) => {
       {type === 'loading' && (
         <ReactSVG src={Loading} className={styles['Loading-svg']} />
       )}
-      {type || 'Default'}
+      {text || type || 'Default'}
     </button>
   );
 };
